@@ -1,0 +1,185 @@
+/* Configuración General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    animation: fadeIn 1.5s ease forwards;
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* Alinea los elementos a la izquierda */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.text-content {
+    max-width: 60%;
+}
+
+.text-content h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+.profile-photo {
+    width: 150px;          /* Ancho fijo de la imagen */
+    height: 150px;         /* Alto fijo de la imagen */
+    border-radius: 50%;    /* Hace que la imagen sea redonda */
+    object-fit: cover;     /* Ajusta la imagen recortándola si es necesario */
+    margin-left: 1rem;     /* Márgenes según sea necesario */
+    display: block;        /* Asegura que se comporte como un bloque */
+}
+
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 50%);
+    animation: lightGlow 4s linear infinite;
+}
+
+@keyframes lightGlow {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
+
+header:hover {
+    background-color: #333745;
+}
+
+/* Sección */
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #333745;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #6c757d;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Estilo de los Proyectos */
+.project {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.5em;
+    color: #495057;
+    margin-top: 0;
+}
+
+.project p {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+/* Enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3b3f4f;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+footer:hover {
+    background-color: #333745;
+}
+
+/* Botón personalizado */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Query para Responsividad */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        max-width: 100%;
+    }
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 0;         /* Elimina el margen izquierdo original */
+        margin-right: 2rem;     /* Añade un margen a la derecha si lo deseas */
+        display: block;
+    }
+    
+    
+    section {
+        padding: 20px 10px;
+    }
+}
